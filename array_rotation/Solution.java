@@ -22,9 +22,14 @@ public class Solution {
         if(k > n) {
           k = k % n;
         }
+        // Rotate left
         reverse_array(a, 0, n-1);
-        reverse_array(a, 0, k-1);
-        reverse_array(a, k, n-1);
+        reverse_array(a, 0, (n-k)-1);
+        reverse_array(a, n-k, n-1);
+        // Rotate right
+        //reverse_array(a, 0, n-1);
+        //reverse_array(a, 0, k-1);
+        //reverse_array(a, k, n-1);
     }
 
     private static void reverse_array(int[] a, int left, int right) {
