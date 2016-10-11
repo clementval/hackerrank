@@ -29,6 +29,7 @@ public class Solution {
                 }
             } else {
                 System.out.println("No");
+		return;
             }
         }
         System.out.println("Yes");
