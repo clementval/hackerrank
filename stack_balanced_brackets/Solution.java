@@ -15,17 +15,21 @@ public class Solution {
                     brackets.push(expression.charAt(i));
                     break;
                 case ')':
-                    if(brackets.pop() != '(') return false;
+                    if(brackets.empty() || brackets.pop() != '(') return false;
                     break;
                 case '}':
-                    if(brackets.pop() != '{') return false;
+                    if(brackets.empty() || brackets.pop() != '{') return false;
                     break;
                 case ']':
-                    if(brackets.pop() != '[') return false;
+                    if(brackets.empty() || brackets.pop() != '[') return false;
                     break;
             }
-        }           
-        return true; 
+        }          
+
+        if(brackets.empty()){
+            return true;
+        } 
+        return false; 
     }
   
     public static void main(String[] args) {
