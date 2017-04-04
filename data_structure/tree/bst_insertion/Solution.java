@@ -11,6 +11,9 @@ static Node Insert(Node root,int value)
     Node inserted = new Node();
     inserted.data = value;
     Node crt = root;
+    if(root == null){
+        return inserted;
+    }
     boolean notInserted = true;
     while(notInserted){
         if(value > crt.data){
@@ -31,7 +34,4 @@ static Node Insert(Node root,int value)
     }
     return root;
 }
-
-
-
 
