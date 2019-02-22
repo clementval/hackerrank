@@ -1,15 +1,13 @@
 package recursion.super_digit;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Solution {
 
   static int superDigit(String n, int k) {
-    BigInteger v = new BigInteger(n);
-    v = v.multiply(new BigInteger("" + k));
-    v = v.mod(new BigInteger("9"));
-    return v.intValue();
+    n = n.chars().mapToLong(Character::getNumericValue).sum() * k  + "";
+    return (n.length() > 1) ? superDigit(n, 1) :
+        Character.getNumericValue(n.charAt(0));
   }
 
   public static void main(String[] args) {
